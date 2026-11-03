@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-
+#Clase abstarcta
 class cuenta (ABC):
     def __init__(self, titular, numero, saldo=0):
         self.__titular= titular
