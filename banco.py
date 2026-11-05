@@ -1,21 +1,18 @@
-from cuentas import cuenta
+from cuentas import Cuenta
 
 class Banco:
     def __init__(self):
         self.__cuentas=[]
 
     def agregar_cuenta(self,cuenta):
-        if not isinstance(cuenta, cuenta):
-            raise TypeError("Debe ser una cuenta bancaria.")
-
-        if self.buscar_cunenta(cuenta.numero):
+        if self.buscar_cuenta(cuenta.get_numero()) is not None:
             raise ValueError("Ya existe una cuenta con ese número.")
 
         self.__cuentas.append(cuenta)
 
     def buscar_cuenta(self,numero):
         for cuenta in self.__cuentas:
-            if cuenta.numero==numero:
+            if cuenta.get_numero()==numero:
                 return cuenta
 
         return None
@@ -29,7 +26,7 @@ class Banco:
 
         if cuenta_origen is None:
             raise ValueError("No existe la cuenta de origen.")
-        if cuenta_destino in None:
+        if cuenta_destino is None:
             raise ValueError("No existe la cuenta de destino.")
 
         cuenta_origen.retirar(cantidad)
