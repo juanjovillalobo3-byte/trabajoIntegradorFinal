@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-#Clase abstarcta
+
 class Cuenta (ABC):
     def __init__(self, titular, numero, saldo=0):
         self.__titular= titular
@@ -51,9 +51,9 @@ class Cuenta (ABC):
 
     def mostrar_informacion(self):
         return( 
-            f"Titular: {self.__titular}"
-            f"Número: {self.__numero}"
-            f"Saldo: {self.__saldo}")
+            f"Titular: {self.__titular}\n"
+            f"Número: {self.__numero}\n"
+            f"Saldo: ${self.__saldo}")
 
 class CuentaAhorro(Cuenta):
     def retirar (self,cantidad):
