@@ -15,7 +15,7 @@ def generar_pdf(cuentas, ruta="reporte_banco.pdf"):
     pdf.set_font("Arial", size=11)
 
     if not cuentas:
-        pdf.cell(0,10,"No hay cuentas regustradas.",ln=True)
+        pdf.cell(0,10,"No hay cuentas registradas.",ln=True)
 
     for cuenta in cuentas:
         pdf.multi_cell(0,8,cuenta.mostrar_informacion())
